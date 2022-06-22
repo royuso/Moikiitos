@@ -1,34 +1,39 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.pojo.Result;
-import com.example.demo.service.CommentService;
 import com.example.demo.service.MemberService;
 
 @RestController
-@RequestMapping('param')
-public class CommentController {
-    private CommentService commentService;
+@RequestMapping("param")
+public class MemberController {
+
     private MemberService memberService;
 
     @Autowired
-    public CommentController(CommentService commentService, MemberService memberService) {
-        this.commentService = commentService;
+    public MemberController (MemberService memberService) {
         this.memberService = memberService;
     }
 
-    @PostMapping("/comment")
-    public Result addComment(){}
+    @PostMapping("/register")
+    public Result register(){}
 
-    @GetMapping("/comment")
-    public Result listComment(){}
-    
-    @DeleteMapping("/comment")
-    public Result deleteComment(){}
+    @PostMapping("/login")
+    public Result login(){}
+
+    @GetMapping("/follower")
+    public Result findFollower(){}
+
+
+    @GetMapping("/following")
+    public Result findFollowing(){}
+
+
+
+
 }
