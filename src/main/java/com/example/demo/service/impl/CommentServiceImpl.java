@@ -6,7 +6,9 @@ import com.example.demo.pojo.Comment;
 import com.example.demo.pojo.vo.CommentVo;
 import com.example.demo.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CommentServiceImpl implements CommentService {
     private CommentMapper commentMapper;
 
